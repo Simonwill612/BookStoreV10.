@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/IndexLayout.cshtml";
+}
+
+@model IEnumerable<BookStoreV10.Models.Book>
+
+
+
+
+
+    @* 
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AuthorName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PublisherName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    <!-- Display the image with a link to the full-size image -->
+                    <a href="@item.ImageUrl" target="_blank">
+                        <img src="@item.ImageUrl" alt="Cover Image" style="max-width: 100px; max-height: 100px; display: block; margin: auto;">
+                    </a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StoreOwner.StoreOwnerId)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.BookId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.BookId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.BookId">Delete</a>
+                </td>
+            </tr>
+        } *@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+    
+
+
+            @foreach (var item in Model)
+            {
+                <div class="col-12 col-sm-6 col-md-4 single_gallery_item women wow fadeInUpBig" data-wow-delay="0.2s">
+                    <!-- Product Image -->
+                    <div class="product-img">
+            <img src="@item.ImageUrl" alt="">
+            <div class="product-quicview">
+                            <a href="/Views/ProductDetail/ProductDetail" data-toggle="modal" data-target="#quickview"><i class="ti-plus"></i></a>
+                        </div>
+                    </div>
+                    <!-- Product Description -->
+                    <div class="product-description">
+
+                        <h4 class="product-price">@item.Price</h4>
+                        <p>@item.Title</p>
+                        <p>@item.AuthorName</p>
+                        <p>@item.PublisherName</p>
+
+
+                        <!-- Add to Cart -->
+                        <a href="#" class="add-to-cart-btn">ADD TO CART</a>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+    </div>
+</section>
+
+
+
+</html>
+
+

@@ -1,0 +1,28 @@
+﻿@model IEnumerable<BookStoreV10.Models.Author>
+
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+    <div class="nav-side-menu">
+        <div class="menu-list">
+            <h6>Authors</h               
+                <!-- Single Item -->
+            <ul id="menu-content" class="menu-content collapse out">
+        @foreach (var item in Model)
+        {
+            
+                    <a href="#">@item.AuthorName <span class="arrow"></span></a>
+                      
+                   
+          
+        }
+
+                
+                <!-- Single Item -->
+                
+            <ul id="menu-content" class="menu-content collapse out">
+
+            </ul>
+        </div>
+    </div>

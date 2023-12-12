@@ -1,0 +1,54 @@
+﻿@model IEnumerable<BookStoreV10.Models.Author>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>Management Authors</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AuthorName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AuthorAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AuthorEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AuthorPhoto)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuthorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuthorAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuthorEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuthorPhoto)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AuthorId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.AuthorId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.AuthorId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
